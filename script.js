@@ -1,3 +1,4 @@
+alert("script working")
 const api_key="107ff1ce97ce4b7ea63341a82eb3aa02"
 const url="https://newsapi.org/v2/everything?q="
 // iska matlb jab hmara window load ho n to hamara news fetch ho jaye wo v india se related

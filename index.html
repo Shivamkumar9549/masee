@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam APi News</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <!-- Yha pe container ko flex krne ke bad hi logo and list items and search and input ek line me aaye hai -->
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="MaseeLogo.png" alt="company logo">
+            </a>
+            <div class="nav-links">
+                <ul class="flex" id="ul-id">
+                    <li class="hover-link hover-item" id="technology" onclick="onNavItemClick('technology',)">TECHNOLOGY</li>
+                    <li class="hover-link hover-item" id="finance" onclick="onNavItemClick('finance')">FINANCE</li>
+                    <li class="hover-link hover-item" id="politics" onclick="onNavItemClick('politics')">POLITICS</li>
+                    <li class="hover-link hover-item" id="sports" onclick="onNavItemClick('sports')">SPORTS</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input type="text" id="news-input" class="news-input" placeholder="e.g. Science">
+                <button class="search-btn" id="search-btn">Search</button>
+            </div>
+        </div>
+    </nav>
+<!-- Main section from here -->
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+            
+            
+        </div>
+
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="boy and girl sitting on chair.png" alt="news-img" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 26/06/2003</h6>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta rerum vel illum vitae ducimus id, similique facilis perspiciatis ad repudiandae tempore in molestiae temporibus, quas consectetur rem. Esse, nihil similique?</p>
+            </div>
+        </div>
+    </template>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

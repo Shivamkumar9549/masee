@@ -1,0 +1,242 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap');
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body
+  {
+    font-family: "Poppins", sans-serif;
+    color: #183b56;
+    
+  }
+
+  p{
+    font-family: "Roboto",sans-serif;
+    color: #577592;
+    line-height: 1.4rem;
+  }
+
+  a{
+    /* anchor tag ke niche se underline remkove hio jaygea */
+    text-decoration: none;
+
+  }
+ul
+{
+    /* ye list style bullet point ko dekhta hai */
+    list-style: none;
+}
+
+.flex
+{
+    display: flex;
+    align-items: center;
+}
+
+.conatiner
+{
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav{
+    background-color: #f3faff;
+    box-shadow: 0 0 4px #bbd0e2;
+    /* ye navBar upar hamesa fixed rhega chahe hm broeswr page ko scroll v kre to */
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+/* it is for when we click a particular nav list then it become colorful and wair for the nextb one */
+.nav-item.active
+{
+     color: red;
+}
+
+.main-nav
+{
+  padding-inline: 60px;
+  /* ye justify yha pr logo img and list and search bar ko  start ,middle and end me place kr rha hai */
+  justify-content: space-between;
+  padding-block: 8px ;
+  height: 60px;
+}
+.company-logo img
+{
+  width: 130px;
+  /* height: 100%; */
+  
+}
+
+
+.nav-links ul
+{
+  gap: 16px;
+/* height: 100%; */
+}
+
+.hover-link
+{
+  cursor: pointer;
+}
+.hover-link:hover
+{
+  color: #577592;
+}
+
+.hover-link:active
+{
+  color: red;
+}
+
+.search-bar
+{
+  height: 32px;
+  gap: 8px;
+}
+
+.news-input
+{
+  width: 200px;
+  height: 110%;
+  padding-inline: 12px;
+  border-radius: 4px;
+  border: 2px solid #bbd0e2;
+  /* news input form ke ander se alag se font family dalna parta hai */
+  font-family: "Roboto",sans-serif;
+}
+.search-btn
+{
+  background-color: rgb(15, 15, 230);
+  color: white;
+  height: 110%;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  /* margin-right: 5px; */
+  font-family: "Roboto",sans-serif;
+}
+.search-btn:hover
+{
+  background-color: rgba(225, 24, 24, 0.82);
+}
+.search-btn:active
+{
+  background-color: greenyellow;
+  color: rgb(215, 50, 50);
+}
+
+/* till here Only nav section designing  was there , now from here onwards we will start with the main section*/
+main{
+  padding-block: 20px;
+  margin-top: 80px;
+}
+.cards-container
+{
+   /* isse jo hai hmara cards wala portion me left me thora jagah chhut jayega
+  margin-left: 60px; */
+  padding-inline: 60px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  align-items: start;
+  
+}
+
+.card
+{
+   width: 360px;
+   height: 400px;
+   box-shadow: 0 0 4px #d4ecff;
+   border-radius: 4px;
+   cursor: pointer;
+   background-color: #fff;
+   overflow: hidden;
+   transition: all 0.3s ease;
+}
+
+.card:hover
+{
+  box-shadow: 1px 1px 8px #d4ecff;
+  background-color: #f3faff;
+  transform: translateY(-4px);
+
+}
+.card-header img
+{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+
+}
+
+.card-content
+{
+  padding: 12px;
+  overflow: hidden;
+}
+.news-source
+{
+  margin-block: 12px;
+}
+
+
+
+/*  */
+@media (max-width: 820px)
+{
+  #ul-id{
+    display: none;
+  }
+  .card{
+    width: 333px;
+  }
+  .news-input {
+    width: 247px;
+  }
+}
+
+@media (max-width: 480px){
+  /* #ul-id{
+    display: none;
+  } */
+  .company-logo img {
+    width: 88px;
+     height: 25px;
+     margin-top: 4px;
+  }
+
+.main-nav {
+  padding-inline: 10px;
+}
+.news-input {
+  width: 187px;
+  height: 106%;
+  margin-left: 5px;
+}
+.search-btn{
+  height: 102%;
+  padding: 8px 14px ;
+}
+.cards-container {
+  padding-inline: 41px;
+}
+}
+
+@media(max-width:360px)
+{
+  .news-input {
+    width: 185px;
+  }
+  .search-btn {
+    padding: 8px 9px;
+  }
+
+}

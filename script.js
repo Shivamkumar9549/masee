@@ -4,15 +4,33 @@ const url="https://newsapi.org/v2/everything?q="
 // iska matlb jab hmara window load ho n to hamara news fetch ho jaye wo v india se related
 window.addEventListener("load",()=> fetchNews("India"))
 // news fetch funtion banate hai
-async function fetchNews(query)
-{
-    // ye fetch jo hai promise return karegi jisko hum response me save kr lenge and uske bad jo data milega usko json me covert kr denge
-    // fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${api_key}`)
-    const res = await fetch(`${url}${query}&apiKey=${api_key}`);
-    // ye v promise return karti hai isliye isko v await krte hai
-    const data = await res.json()
-    bindData(data.articles);
+// async function fetchNews(query)
+// {
+//     // ye fetch jo hai promise return karegi jisko hum response me save kr lenge and uske bad jo data milega usko json me covert kr denge
+//     // fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${api_key}`)
+//     const res = await fetch(`${url}${query}&apiKey=${api_key}`);
+//     // ye v promise return karti hai isliye isko v await krte hai
+//     const data = await res.json()
+//     bindData(data.articles);
+// }
+
+async function fetchNews(query) {
+    try {
+        const res = await fetch(`${url}${query}&apiKey=${api_key}`);
+        if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        const data = await res.json();
+        if (data.articles && Array.isArray(data.articles)) {
+            bindData(data.articles);
+        } else {
+            console.error('Invalid data format received from API');
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
 }
+
 
 function bindData(articles)
 {
